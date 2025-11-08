@@ -5,7 +5,7 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // In-memory user storage (in production, use a database)
 let users = [];
@@ -26,6 +26,11 @@ const addUser = (email, password) => {
 
 app.use(cors());
 app.use(bodyParser.json());
+
+// Root route for health checks and quick sanity response
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', service: 'JWT Auth API', routes: ['/register', '/login', '/protected'] });
+});
 
 app.post('/register', (req, res) => {
   const { email, password } = req.body;

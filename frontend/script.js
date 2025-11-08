@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://your-backend-url.onrender.com';
+    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://jwt-auth-webapp-3.onrender.com';
     const response = await fetch(`${API_URL}/login`, {
       method: 'POST',
       headers: {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = registerEmailInput.value;
     const password = registerPasswordInput.value;
 
-    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://your-backend-url.onrender.com';
+    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://jwt-auth-webapp-3.onrender.com';
     const response = await fetch(`${API_URL}/register`, {
       method: 'POST',
       headers: {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   accessProtectedButton.addEventListener('click', async () => {
     const token = localStorage.getItem('token');
 
-    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://your-backend-url.onrender.com';
+    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://jwt-auth-webapp-3.onrender.com';
     const response = await fetch(`${API_URL}/protected`, {
       headers: {
         'Authorization': `Bearer ${token}`
