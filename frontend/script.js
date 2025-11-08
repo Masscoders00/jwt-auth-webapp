@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    const response = await fetch('http://localhost:3000/login', {
+    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://your-backend-url.onrender.com';
+    const response = await fetch(`${API_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = registerEmailInput.value;
     const password = registerPasswordInput.value;
 
-    const response = await fetch('http://localhost:3000/register', {
+    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://your-backend-url.onrender.com';
+    const response = await fetch(`${API_URL}/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -93,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
   accessProtectedButton.addEventListener('click', async () => {
     const token = localStorage.getItem('token');
 
-    const response = await fetch('http://localhost:3000/protected', {
+    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://your-backend-url.onrender.com';
+    const response = await fetch(`${API_URL}/protected`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

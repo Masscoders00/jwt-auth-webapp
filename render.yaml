@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: jwt-auth-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: JWT_SECRET
+        value: your-super-secret-jwt-key-change-this-in-production
+    
+  - type: web
+    name: jwt-auth-frontend
+    env: static
+    buildCommand: cd frontend && echo "Static files ready"
+    staticPublishPath: frontend
