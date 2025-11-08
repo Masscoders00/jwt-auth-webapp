@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Authentication</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="authForms">
+      <div id="loginFormContainer">
+        <h1>Login</h1>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+      </div>
+      
+      <div id="registerFormContainer" style="display: none;">
+        <h1>Register</h1>
+        <form id="registerForm">
+          <input type="email" id="registerEmail" placeholder="Email" required>
+          <input type="password" id="registerPassword" placeholder="Password" required>
+          <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+      </div>
+    </div>
+    
+    <div id="successMessage" style="display: none;">
+      <h2>Success!</h2>
+      <p id="successText"></p>
+      <button id="continueButton">Continue</button>
+    </div>
+    
+    <div id="protectedData" style="display: none;">
+      <h2>Protected Data</h2>
+      <p id="data"></p>
+      <button id="logoutButton">Logout</button>
+    </div>
+    <button id="accessProtectedButton" style="display: none;">Access Protected Data</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
